@@ -54,8 +54,10 @@ word = word_half + word_add
 print(word)
 
 # Задание 4
-q = ' Ivanov  Ivan '
-print(q[-5:-1], q[1:7])
+q = 'Ivanov  Ivan'
+word = q.split()
+reversed_word = " ".join(reversed(word))
+print(reversed_word)
 
 # Задание 5
 d_stroka = ' Я изучаю Python '
