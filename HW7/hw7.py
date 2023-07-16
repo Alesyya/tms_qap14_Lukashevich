@@ -11,16 +11,16 @@ numbers = [34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7]
 s1 = [i for i in numbers if i > 0]
 print(s1)
 
+
 # с использованием функции генератор
-def kd(numbers, a):
+def only_positive_numbers(numbers, result):
     for i in numbers:
         if i > 0:
-            a.append(i)
-    yield a
+            result.append(i)
+    yield result
 
 
-v = kd([34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7], [])
-print(next(v))
+print(next(only_positive_numbers([34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7], [])))
 
 
 # 4
@@ -58,14 +58,12 @@ def encode(sentence, shift):
         encoded_sentence += encoded_char
     return encoded_sentence
 
+
 def decode(word, shift):
     return encode(word, -shift)
-
 word = "Hello, Мир!"
 shift = 5
-
 encoded_sentence = encode(word, shift)
 print("Encoded sentence:", encoded_sentence)
-
 decoded_sentence = decode(encoded_sentence, shift)
 print("Decoded sentence:", decoded_sentence)
